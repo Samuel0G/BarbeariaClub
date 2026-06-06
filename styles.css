@@ -214,6 +214,16 @@ h1 {
   letter-spacing: 0;
 }
 
+.hero h1 {
+  background: linear-gradient(110deg, #f7f3ea 0%, #f7f3ea 36%, var(--gold-bright) 48%, #ffffff 52%, var(--gold-bright) 56%, #f7f3ea 68%, #f7f3ea 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 26px rgba(241, 200, 118, 0.14);
+  animation: title-shine 4.8s ease-in-out infinite;
+}
+
 h2 {
   max-width: 780px;
   margin-bottom: 18px;
@@ -753,6 +763,30 @@ details p {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes title-shine {
+  0%,
+  18% {
+    background-position: 120% 50%;
+    text-shadow: 0 0 18px rgba(241, 200, 118, 0.08);
+  }
+
+  48% {
+    background-position: -40% 50%;
+    text-shadow: 0 0 36px rgba(241, 200, 118, 0.28);
+  }
+
+  100% {
+    background-position: -40% 50%;
+    text-shadow: 0 0 18px rgba(241, 200, 118, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 {
+    animation: none;
+  }
 }
 
 @media (max-width: 1020px) {
